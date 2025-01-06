@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
-    <h1>All Events</h1>
+<!--    <h1>All Events</h1>-->
 
     <header th:replace = "fragments :: header"></header>
 
@@ -10,11 +10,19 @@
         <table class="table table-striped">
             <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
+                <th>Description</th>
+                <th>Email</th>
+
             </tr>
             </thead>
             <tr th:each="event : ${events}">
-                <td th:text="${event}"></td>
+                <td th:text="${event.id}"></td>
+                <td th:text="${event.name}"></td>
+                <td th:text="${event.description}"></td>
+                <td th:text="${event.email}"></td>
+
             </tr>
         </table>
 
